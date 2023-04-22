@@ -36,11 +36,11 @@ public class BookController {
      * @param book the book to create.
      * @return the {@link ResponseEntity} with status {@code 201 (Created)} and with body the new book.
      */
-	@PostMapping()
-	public ResponseEntity<Book> createBook(@RequestBody @Valid Book book) {
-         log.debug("REST request to save Book : {}", book);
-         return new ResponseEntity<>(entityService.create(book), HttpStatus.CREATED);
-    }
+//	@PostMapping()
+//	public ResponseEntity<Book> createBook(@RequestBody @Valid Book book) {
+//         log.debug("REST request to save Book : {}", book);
+//         return new ResponseEntity<>(entityService.create(book), HttpStatus.CREATED);
+//    }
 
    /**
      * {@code PUT  /book} : Updates an existing book.
@@ -50,12 +50,12 @@ public class BookController {
      * or with status {@code 400 (Bad Request)} if the book is not valid,
      * or with status {@code 500 (Internal Server Error)} if the book couldn't be updated.
      */
-    @PutMapping()
-    public ResponseEntity<Book> updateBook(@Valid @RequestBody Book book) {
-        log.debug("REST request to update Book : {}", book);
-        Book result = entityService.update(book);
-        return ResponseEntity.ok().body(result);
-    }
+//    @PutMapping()
+//    public ResponseEntity<Book> updateBook(@Valid @RequestBody Book book) {
+//        log.debug("REST request to update Book : {}", book);
+//        Book result = entityService.update(book);
+//        return ResponseEntity.ok().body(result);
+//    }
 
     /**
      * {@code GET  /book} : get all the books.
@@ -63,13 +63,13 @@ public class BookController {
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of book in body.
      */
 
-    @GetMapping()
-    public ResponseEntity<List<Book>> getAllBook() {
-	    log.debug("REST request to get all books");
-        List<Book> lst = entityService.getAll();
-
-        return new ResponseEntity<>(lst,HttpStatus.OK);
-    }
+//    @GetMapping()
+//    public ResponseEntity<List<Book>> getAllBook() {
+//	    log.debug("REST request to get all books");
+//        List<Book> lst = entityService.getAll();
+//
+//        return new ResponseEntity<>(lst,HttpStatus.OK);
+//    }
 
     /**
      * {@code GET  /book/:id} : get the "id" book.
@@ -77,13 +77,13 @@ public class BookController {
      * @param id the id of the book to retrieve.
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the book, or with status {@code 404 (Not Found)}.
      */
-    @GetMapping(value = "/{id}")
-    public ResponseEntity<Book> getOneBook(@PathVariable("id") Long id) {
-        log.debug("REST request to get Book : {}", id);
-        Book e = entityService.getOne(id);
-
-        return new ResponseEntity<>(e, HttpStatus.OK);
-    }
+//    @GetMapping(value = "/{id}")
+//    public ResponseEntity<Book> getOneBook(@PathVariable("id") Long id) {
+//        log.debug("REST request to get Book : {}", id);
+//        Book e = entityService.getOne(id);
+//
+//        return new ResponseEntity<>(e, HttpStatus.OK);
+//    }
 
   /**
      * {@code DELETE  /book/:id} : delete the "id" book.
@@ -91,11 +91,11 @@ public class BookController {
      * @param id the id of the book to delete.
      * @return the {@link ResponseEntity} with status {@code 204 (NO_CONTENT)}.
      */
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteBook(@PathVariable("id") Long id) {
-        log.debug("REST request to delete Book : {}", id);
-        entityService.delete(id);
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-    }
+//    @DeleteMapping("/{id}")
+//    public ResponseEntity<Void> deleteBook(@PathVariable("id") Long id) {
+//        log.debug("REST request to delete Book : {}", id);
+//        entityService.delete(id);
+//        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+//    }
 
 }
